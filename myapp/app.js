@@ -8,6 +8,23 @@ var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api");
 var usersRouter = require("./routes/users");
 
+const mongoose = require("mongoose");
+
+const connectDb = () => {
+  mongoose
+    .connect(
+      "mongodb+srv://hoanganweb:QhghRECqi2CiMo0L@cluster0.4obwtlj.mongodb.net/?retryWrites=true&w=majority"
+    )
+    .then(() => {
+      console.log("connect success");
+    })
+    .catch(() => {
+      console.log("connect failed");
+    });
+};
+
+connectDb();
+
 var app = express();
 
 // view engine setup
