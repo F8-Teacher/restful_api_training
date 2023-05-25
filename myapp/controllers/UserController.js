@@ -11,7 +11,7 @@ const users = [
 
 module.exports = {
   index: (req, res) => {
-    const { query } = req.query;
+    const { query } = req.query; //?query=abc
     let search = [];
     if (query?.length) {
       search = users.filter(({ name }) =>

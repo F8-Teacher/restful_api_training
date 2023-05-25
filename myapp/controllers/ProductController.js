@@ -47,13 +47,13 @@ module.exports = {
     res.json(products);
   },
 
-  get: (req, res) => {
-    // const { id } = req.params; //Destructuring
+  get: async (req, res) => {
+    const { id } = req.params; // Destructuring;
 
     // const product = products.find((product) => product.id === parseInt(id));
 
     // res.json(product);
-    const product = {};
+    const product = await Product.findById(id);
 
     res.json(product);
   },

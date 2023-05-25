@@ -18,8 +18,8 @@ const connectDb = () => {
     .then(() => {
       console.log("connect success");
     })
-    .catch(() => {
-      console.log("connect failed");
+    .catch((err) => {
+      console.log("connect failed", err);
     });
 };
 
