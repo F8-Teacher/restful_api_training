@@ -48,3 +48,49 @@ Cài đặt:
 //Schema, Data
 
 //Products: name, price, description
+
+Bài tập: Xây dựng resource /posts
+
+- title
+- content
+
+Xử lý:
+
+- Lấy danh sách posts
+- Thêm post mới
+- Lấy chi tiết 1 post theo id
+
+Các bước triển khai
+
+- Tạo model Post.js
+
+- Tạo Controller PostController.js
+
+- Tạo route: /posts
+
+## Authentication
+
+Controller: AuthController
+
+- /login
+- /logout
+- /register
+
+Model: User
+
+Schema: name, email, password
+
+Middleware
+
+- AuthMiddleware => Kiểm tra đăng nhập
+
+### Đăng ký tài khoản
+
+Post Request => Lấy Body => Mã hóa mật khẩu (bcrypt) => Insert vào Database => Tạo AccessToken và Refresh Token => Trả về Response (status, Token)
+
+### Đăng nhập
+
+Post Request => Lấy body => Lấy hash (Query theo email) => Compare với password từ body
+
+- Đúng => Tạo accessToken và Refresh token
+- Sai => Trả trả thông báo lỗi

@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -60,5 +61,8 @@ app.use(function (err, req, res, next) {
 //Import module
 // const { getMessage } = require("./modules/functions");
 // getMessage();
+
+const { APP_NAME } = process.env;
+console.log(`APP_NAME = `, APP_NAME);
 
 module.exports = app;
